@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 `include "../fp_gt.v"
 
-module dev_tb();
+module fp_gt_tb();
     reg [31:0] F1;
     reg [31:0] F2;
 
@@ -12,7 +12,7 @@ module dev_tb();
     initial begin
         $monitor("F1=%d, F2=%d, RESULT=%b", F1[30:0], F2[30:0], RESULT);
         $dumpfile("fp_gt.vcd");
-        $dumpvars(0, dev_tb);
+        $dumpvars(0, fp_gt_tb);
         
         // Expect: 1
         F1 = 32'b01000001010000000000000000000000; // 12 

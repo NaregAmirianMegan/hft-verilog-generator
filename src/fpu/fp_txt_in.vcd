@@ -1,0 +1,45 @@
+$date
+	Tue Jun 30 12:19:30 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module fp_txt_in $end
+$var wire 1 ! RESULT $end
+$var reg 32 " F1 [31:0] $end
+$var reg 32 # F2 [31:0] $end
+$var integer 32 $ i [31:0] $end
+$scope module uut $end
+$var wire 32 % f1 [31:0] $end
+$var wire 32 & f2 [31:0] $end
+$var reg 1 ! out $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1000001010000000000000000000000 &
+b11000001010000000000000000000000 %
+b0 $
+b1000001010000000000000000000000 #
+b11000001010000000000000000000000 "
+0!
+$end
+#1000000
+b1000001010101100110011001100110 #
+b1000001010101100110011001100110 &
+b0 "
+b0 %
+b10 $
+#2000000
+1!
+b11000001010000000000000000000000 #
+b11000001010000000000000000000000 &
+b1000001010000000000000000000000 "
+b1000001010000000000000000000000 %
+b100 $
+#3000000
+b110 $
