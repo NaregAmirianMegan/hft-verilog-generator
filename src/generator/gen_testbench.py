@@ -45,14 +45,14 @@ def gen_tb(fields, rows, algo_v, data_csv):
             mon_list += fields[i] + "=%d, "
             mon_args += fields[i] + ", "
 
-        f.write("   reg [31:0] data[{}:0];\n\n".format(rows-1))
+        f.write('   reg [31:0] data[{}:0];\n\n'.format(rows-1))
 
-        f.write("   wire w_o1, w_o2;\n")
+        f.write('   wire w_o1, w_o2;\n')
             
-        f.write("   {} uut ({});\n\n".format(algo_v.split(".")[0], args_list))
+        f.write('   {} uut ({});\n\n'.format(algo_v.split(".")[0], args_list))
 
-        f.write("   integer i, f;\n")
-        f.write("   initial begin\n")
+        f.write('   integer i, f;\n')
+        f.write('   initial begin\n')
 
         f.write('       f = $fopen("{}_out.txt", "w");\n'.format(algo_v.split(".")[0]))
 
@@ -62,9 +62,23 @@ def gen_tb(fields, rows, algo_v, data_csv):
 
         f.write('       $dumpvars(0, {});\n\n'.format(tb_name.split(".")[0]))
 
-        f.write('       $readmemh("{}", {});\n'.format(data_csv.split(".")[0]+".hex", "data"))
+        f.write('       $readmemh("{}", {});\n\n'.format(data_csv.split(".")[0]+".hex", "data"))
 
+        f.write('       for (i = 1; i < {}; i = i + {})\n'.format(str(rows-1), str(len(fields))))
+        f.write('       begin\n')
 
+        for i in range(len(fields)):
+            f.write('           {} = data[i+{}];\n'.format(fields[i], str(i)))
+            f.write('           #1000;\n')
+        f.write('           $fwrite(f, "{}OUT1=%b, OUT2=%b", {}w_o1, w_o2));\n'.format(mon_list, mon_args))
+        f.write('           #1000;\n')
+
+        f.write('       end\n')
+        f.write('       $fclose(f);\n')
+        f.write('       $finish;\n')
+
+        f.write('   end\n\n')
+        f.write('endmodule')
 
 if __name__ == "__main__":
     assert len(sys.argv) == 3, "Oops, make sure you run $ python gen_testbench.py [path/to/data.csv] [path/to/algo_mod.v]"
