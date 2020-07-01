@@ -1,0 +1,72 @@
+$date
+	Tue Jun 30 20:40:15 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module rsi_txt_in $end
+$var wire 1 ! w_o2 $end
+$var wire 1 " w_o1 $end
+$var reg 32 # r_rsi [31:0] $end
+$var integer 32 $ f [31:0] $end
+$var integer 32 % i [31:0] $end
+$scope module uut $end
+$var wire 32 & RSI [31:0] $end
+$var wire 1 ' l $end
+$var wire 1 ( h $end
+$var reg 32 ) high [31:0] $end
+$var reg 32 * low [31:0] $end
+$var reg 1 " out1 $end
+$var reg 1 ! out2 $end
+$scope module higher $end
+$var wire 32 + f1 [31:0] $end
+$var wire 32 , f2 [31:0] $end
+$var reg 1 ( out $end
+$upscope $end
+$scope module lower $end
+$var wire 32 - f1 [31:0] $end
+$var wire 32 . f2 [31:0] $end
+$var reg 1 ' out $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1000010010010000000000000000000 .
+b1000001111100000000000000000000 -
+b1000010100011000000000000000000 ,
+b1000010010010000000000000000000 +
+b1000001111100000000000000000000 *
+b1000010100011000000000000000000 )
+0(
+0'
+b1000010010010000000000000000000 &
+b0 %
+b10000000000000000000000000000011 $
+b1000010010010000000000000000000 #
+1"
+0!
+$end
+#2000000
+0"
+1(
+b1000010101000000000000000000000 #
+b1000010101000000000000000000000 &
+b1000010101000000000000000000000 +
+b1000010101000000000000000000000 .
+b1 %
+#4000000
+1!
+0(
+1'
+b1000001101000000000000000000000 #
+b1000001101000000000000000000000 &
+b1000001101000000000000000000000 +
+b1000001101000000000000000000000 .
+b10 %
+#6000000
+b11 %
