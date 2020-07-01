@@ -4,8 +4,21 @@ This file accepts a json file as input and generates a
 
 import sys, json
 
-def write_verilog(v_file, data):
+def write_verilog(v_file, data, name):
+    v_file.write('`include "fp_gt.v"\n\n')
+
+    inputs = ""
+    for i in range(len(data["Signals"])):
+        inputs += ', input [31:0] {}'.format(data["Signals"][i])
+    v_file.write('module {}(output out1, output out2{});\n'.format(name.split(".")[0].split("/")[-1], inputs))
     
+    v_file.write("  reg out1 = 1'b1;\n")
+    v_file.write("  reg out2 = 1'b0;\n")
+
+
+
+
+
 
 def main(file, name):
     data, v_file = None, None
@@ -14,12 +27,14 @@ def main(file, name):
             data = json.load(f)
     except:
         print("Error: couldn't open json file, ensure path is correct.")
+        sys.exit()
     try:
         v_file = open(name, "w")
     except:
         print("Error: couldn't create .v file, ensure file name doesn't use odd characters.")
+        sys.exit()
 
-    write_verilog(v_file, data)
+    write_verilog(v_file, data, name)
 
 def display_help():
     print("Help: (must be using > python 3.6.*)")

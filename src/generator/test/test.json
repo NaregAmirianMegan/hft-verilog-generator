@@ -1,9 +1,15 @@
 {
     "Signals": ["RSI"],
-    "Buy": [
-        ["RSI", "<", 30]
-    ],
-    "Sell": [
-        ["RSI", ">", 70]
-    ]
+    "Buy": {
+        "Conditions": {
+            "c1": ["RSI", "<", 30]
+        },
+        "Logic": "c1"
+    },
+    "Sell": {
+        "Conditions": {
+            "c1": ["RSI", ">", 70]
+        },
+        "Logic": "c1"
+    }
 }
