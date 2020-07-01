@@ -1,6 +1,6 @@
 # fpga-accel-htf
 ## Intro
-A simple HLS tool that allows users to specify trading parameters and generates virtual hardware that speeds up and parallelizes the rule based algorithm. The generated hardware assumes single precision IEEE754 floating point numbers as inputs. 
+Convert json descriptions of quant algorithms to verilog HDL and backtest the hardware on price time series data. 
 ## Usage
 ### Requirements 
 - icarus verilog compiler
