@@ -19,22 +19,26 @@ JSON Algo Description: <br>
 ```
 {
   "Signals": ["signal1", "signal2", ...],
-    "Buy": {
-        "Conditions": {
-            "c1": ["signal", "<>", "signal/constant"],
-            "c2": ["signal", "<>", "signal/constant"],
-            ...
-        },
-        "Logic": "[boolean expression on conditions, true when algo should indicate buy]"
-    },
-    "Sell": {
-        "Conditions": {
-            "c1": ["signal", "<>", "signal/constant"],
-            "c2": ["signal", "<>", "signal/constant"],
-            ...
-        },
-        "Logic": "[boolean expression on conditions, true when algo should indicate sell]"
-    }
+  "Constants": {
+      "l": 30,
+      "h": 70
+  },
+  "Buy": {
+      "Conditions": {
+          "c1": ["signal/constant", "<>", "signal/constant"],
+          "c2": ["signal/constant", "<>", "signal/constant"],
+          ...
+      },
+      "Logic": "[boolean expression on conditions, true when algo should indicate buy]"
+  },
+  "Sell": {
+      "Conditions": {
+          "c1": ["signal/constant", "<>", "signal/constant"],
+          "c2": ["signal/constant", "<>", "signal/constant"],
+          ...
+      },
+      "Logic": "[boolean expression on conditions, true when algo should indicate sell]"
+  }
 }
 ```
 The signals in the json file should match the fields in the .csv that will be used for backtesting.
