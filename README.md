@@ -18,6 +18,23 @@ data1, data2, ...
 JSON Algo Description: <br>
 ```
 {
+  "Signals": ["signal1", "signal2", ...],
+    "Buy": {
+        "Conditions": {
+            "c1": ["signal", "<>", "signal/constant"],
+            "c2": ["signal", "<>", "signal/constant"],
+            ...
+        },
+        "Logic": "[boolean expression on conditions, true when algo should indicate buy]"
+    },
+    "Sell": {
+        "Conditions": {
+            "c1": ["signal", "<>", "signal/constant"],
+            "c2": ["signal", "<>", "signal/constant"],
+            ...
+        },
+        "Logic": "[boolean expression on conditions, true when algo should indicate sell]"
+    }
 }
 ```
 ### Example 1
