@@ -1,4 +1,4 @@
-# fpga-accel-htf
+# hft-verilog-generator
 ## Intro
 Convert json descriptions of quant algorithms to verilog HDL and backtest the hardware on price time series data. 
 ## Usage
