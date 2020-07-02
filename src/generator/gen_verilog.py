@@ -14,15 +14,15 @@ def write_comp_unit(f, conds, name):
         f.write('  fp_gt {}(.out({}), .f1({}), .f2({}));\n'.format(name+"_c", name, conds[2], conds[0]))
 
 def write_verilog(v_file, data, name):
-    v_file.write('`include "fp_gt.v"\n\n')
+    v_file.write('`include "../../fpu/fp_gt.v"\n\n')
 
     inputs = ""
     for i in range(len(data["Signals"])):
         inputs += ', input [31:0] {}'.format(data["Signals"][i])
     v_file.write('module {}(output out1, output out2{});\n'.format(name.split(".")[0].split("/")[-1], inputs))
     
-    v_file.write("  reg out1 = 1'b1;\n")
-    v_file.write("  reg out2 = 1'b0;\n")
+    v_file.write("  reg out1 = 1'b0;\n")
+    v_file.write("  reg out2 = 1'b1;\n")
 
     for k, v in data["Constants"].items():
         b = get_bin_from_int(v)
@@ -76,13 +76,13 @@ def write_verilog(v_file, data, name):
     v_file.write("      end\n")
     v_file.write("      else if ({})\n".format(buy_logic))
     v_file.write("      begin\n")
-    v_file.write("          out1 = 1'b0;\n")
-    v_file.write("          out2 = 1'b1;\n")
+    v_file.write("          out1 = 1'b1;\n")
+    v_file.write("          out2 = 1'b0;\n")
     v_file.write("      end\n")
     v_file.write("      else\n")
     v_file.write("      begin\n")
-    v_file.write("          out1 = 1'b1;\n")
-    v_file.write("          out2 = 1'b0;\n")
+    v_file.write("          out1 = 1'b0;\n")
+    v_file.write("          out2 = 1'b1;\n")
     v_file.write("      end\n")
     v_file.write("  end\n")
     v_file.write("endmodule")

@@ -1,19 +1,19 @@
 `timescale 1ns / 1ps
-`include "algo.v"
+`include "test/test.v"
 
-module algo_tb();
+module test/test_tb();
    reg [31:0] rsi_;
    reg [31:0] data[2:0];
 
    wire w_o1, w_o2;
-   algo uut (.out1(w_o1), .out2(w_o2), .rsi_(rsi_));
+   test/test uut (.out1(w_o1), .out2(w_o2), .rsi_(rsi_));
 
    integer i, f;
    initial begin
-       f = $fopen("algo_out.txt", "w");
+       f = $fopen("test/test_out.txt", "w");
        $monitor("rsi_=%d, OUT1=%b, OUT2=%b", rsi_, w_o1, w_o2);
-       $dumpfile("algo.vcd");
-       $dumpvars(0, algo_tb);
+       $dumpfile("test/test.vcd");
+       $dumpvars(0, test/test_tb);
 
        $readmemh("data.hex", data);
 
@@ -27,5 +27,4 @@ module algo_tb();
        $fclose(f);
        $finish;
    end
-
 endmodule
