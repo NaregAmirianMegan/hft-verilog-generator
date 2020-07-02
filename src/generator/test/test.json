@@ -1,14 +1,18 @@
 {
     "Signals": ["RSI"],
+    "Constants": {
+        "low": 30,
+        "high": 70
+    },
     "Buy": {
         "Conditions": {
-            "c1": ["RSI", "<", 30]
+            "c1": ["RSI", "<", "low"]
         },
         "Logic": "c1"
     },
     "Sell": {
         "Conditions": {
-            "c1": ["RSI", ">", 70]
+            "c1": ["RSI", ">", "high"]
         },
         "Logic": "c1"
     }

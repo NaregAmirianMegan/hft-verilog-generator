@@ -15,12 +15,12 @@ module rsi(output out1, output out2, input [31:0] RSI);
 
     always @ (*)
     begin
-        if (h)
+        if (h) // sell logic
         begin
             out1 = 1'b0;
             out2 = 1'b0;
         end
-        else if (l)
+        else if (l) // buy logic
         begin
             out1 = 1'b0;
             out2 = 1'b1;
