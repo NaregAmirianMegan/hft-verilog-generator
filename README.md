@@ -69,7 +69,7 @@ JSON:
     }
 }
 ```
-Generated Schematic:
+Generated Hardware:
 <img width="1021" alt="rsi_schematic" src="https://user-images.githubusercontent.com/22607081/86496714-31412480-bd44-11ea-9e1f-6a90c4921acc.png">
 ### Example 2 (Ichimoku Cloud based strategy)
 JSON:
@@ -102,6 +102,7 @@ JSON:
     }
 }
 ```
+Generated Hardware:
 ![ichimoku_schematic](https://user-images.githubusercontent.com/22607081/86496704-2c7c7080-bd44-11ea-8925-79957956b1b5.png)
 
 ## Sample Results
