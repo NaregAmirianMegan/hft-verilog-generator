@@ -43,7 +43,11 @@ JSON Algo Description: <br>
 ```
 The signals in the json file should match the fields in the .csv that will be used for backtesting. Refrain from using verilog keywords like module, time, begin, etc...
 ### Example 1
-Ex1
+![fp_gt_schematic](https://user-images.githubusercontent.com/22607081/86496693-22f30880-bd44-11ea-8c3d-ed248f331ff9.png)
+
+<img width="1021" alt="rsi_schematic" src="https://user-images.githubusercontent.com/22607081/86496714-31412480-bd44-11ea-9e1f-6a90c4921acc.png">
+
+![ichimoku_schematic](https://user-images.githubusercontent.com/22607081/86496704-2c7c7080-bd44-11ea-8925-79957956b1b5.png)
 ### Example 2
 Ex2
 ## Sample Results
