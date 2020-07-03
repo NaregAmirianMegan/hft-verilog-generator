@@ -85,7 +85,7 @@ def gen_tb(fields, rows, algo_v, data_csv):
         for i in range(len(fields)):
             f.write('           {} = data[i+{}];\n'.format(fields[i], str(i)))
             f.write('           #1000;\n')
-        f.write('           $fwrite(f, "{}OUT1=%b, OUT2=%b", {}w_o1, w_o2);\n'.format(mon_list, mon_args))
+        f.write('           $fwrite(f, "{}OUT1=%b, OUT2=%b{}{}", {}w_o1, w_o2);\n'.format(mon_list, "\\", "n", mon_args))
         f.write('           #1000;\n')
 
         f.write('       end\n')

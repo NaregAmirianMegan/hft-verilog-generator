@@ -1,0 +1,27 @@
+{
+    "Signals": ["PRICE", "SSA", "SSB", "KS", "TS"],
+    "Constants": {
+        "low": 30,
+        "high": 70
+    },
+    "Buy": {
+        "Conditions": {
+            "c1": ["PRICE", "<", "SSA"],
+            "c2": ["PRICE", "<", "SSB"],
+            "c3": ["SSA", ">", "SSB"],
+            "c4": ["PRICE", ">", "KS"],
+            "c5": ["TS", ">", "KS"]
+        },
+        "Logic": "! ( c1 | c2 ) | c3 | c4 | c5"
+    },
+    "Sell": {
+        "Conditions": {
+            "c1": ["PRICE", "<", "SSA"],
+            "c2": ["PRICE", "<", "SSB"],
+            "c3": ["SSA", "<", "SSB"],
+            "c4": ["PRICE", "<", "KS"],
+            "c5": ["TS", "<", "KS"]
+        },
+        "Logic": "( c1 & c2 ) | c3 | c4 | c5"
+    }
+}
