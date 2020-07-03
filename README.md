@@ -20,8 +20,8 @@ JSON Algo Description: <br>
 {
   "Signals": ["signal1", "signal2", ...],
   "Constants": {
-      "l": 30,
-      "h": 70
+      "constant1": float literal,
+      "constant2": float literal
   },
   "Buy": {
       "Conditions": {
@@ -41,7 +41,7 @@ JSON Algo Description: <br>
   }
 }
 ```
-The signals in the json file should match the fields in the .csv that will be used for backtesting.
+The signals in the json file should match the fields in the .csv that will be used for backtesting. Refrain from using verilog keywords like module, time, begin, etc...
 ### Example 1
 Ex1
 ### Example 2
